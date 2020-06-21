@@ -48,5 +48,5 @@ Such that your ```~/.config/``` directory in you home directory contains
  - Then enter your password and login to i3
 
  ***From Now on your $mod key will be your win key***
- 
+ ## A Guide to all the keybindings and shortcuts and features will be discussed in the future, For now just go through the ```i3/config``` file. 
  
