@@ -33,6 +33,10 @@ make
 
 sudo make install
 ```
+## Build or Install Polybar
+```
+https://github.com/polybar/polybar#dependencies
+```
 
 # Modify Your DM or launch script just like any other i3 installation
 
