@@ -1,5 +1,7 @@
 # i3_custom-build
 
+***My Default terminal is Gnome-Terminal. So all my configs are based on it. If you want to change it to your default terminal edit the configs. ***
+
 # Install i3-gaps
 
   - Install Dependencies (use your own package manager):
