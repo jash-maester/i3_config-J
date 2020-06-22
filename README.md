@@ -34,12 +34,10 @@ This guide is meant for Fedora GNOME. So modify GDM as follows:
  ``` WaylandEnable=false```
  
  
-# Clone the contents of this repo in ```~/.config/``` 
-Such that your ```~/.config/``` directory in you home directory contains
+# Clone the repo in any suitable folder (not in your home directory)
+Execute the ```install.sh``` script :
 ```
- - i3
- - polybar
- - rofi
+sh install.sh
 ```
  
  
