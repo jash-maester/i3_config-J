@@ -1,6 +1,14 @@
 # i3_custom-build
 
-***My Default terminal is Gnome-Terminal. So all my configs are based on it. If you want to change it to your default terminal edit the configs. ***
+```
+***
+I use both Gnome-Terminal & LukeSmith's-build of St. So all my configs are based on it.
+$mod is the Start or Win key on keyboard.
+$mod+Return -> will launch St
+Ctrl+Alt+t -> will launch gnome-terminal
+If you want to change it to your default terminal edit the configs. 
+***
+```
 
 # Install i3-gaps
 
