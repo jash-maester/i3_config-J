@@ -5,6 +5,8 @@
   - Install Dependencies (use your own package manager):
 
 ## On Fedora
+***I have enabled RPM repos. So some packages maybe exclusive to them. Download them or their alternatives manually.***
+
 
 ```
 sudo dnf install libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake i3status dmenu i3lock xbacklight nitrogen-1.6.1-10.fc32.x86_64
@@ -14,8 +16,6 @@ sudo dnf install libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-
 ```
 sudo apt install -y libxcb1-dev libxcb-keysyms1-dev libpango1.0-dev libxcb-util0-dev libxcb-icccm4-dev libyajl-dev libstartup-notification0-dev libxcb-randr0-dev libev-dev libxcb-cursor-dev libxcb-xinerama0-dev libxcb-xkb-dev libxkbcommon-dev libxkbcommon-x11-dev autoconf libxcb-xrm0 libxcb-xrm-dev automake
 ```
-
-***I have enabled RPM repos. So some packages maybe exclusive to them. Download them or their alternatives manually.***
 
  - Copy paste the following one-by-one:
 ```
