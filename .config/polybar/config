@@ -64,7 +64,7 @@ font-7 = ${fonts.symbola}
 wm-restack = i3
 tray-position = left
 
-modules-left = workspaces xkbstates xkillapp settings terminal appfilemanager firefox mediaplayer
+modules-left = workspaces xkbstates xkillapp settings terminal appfilemanager firefox music
 modules-center = date media
 modules-right = temperature memory memoryswap cpu battery pulseaudio nm-launcher wifi powermenu
 
@@ -131,20 +131,12 @@ label-urgent-underline = ${colors.light-red}
 label-urgent-padding = 3
 label-urgent-font = 3
 
-
-;Media Player
-;[module/mediaplayer]
-;type = custom/script
-;format = <label>
-;format-padding = 2
-;exec = ~/.config/polybar/player.sh
-;exec-if = playerctl status
-;interval = 0.5
-;label-font = 3
-;click-middle = playerctl play-pause
-
-;format-underline = ${colors.menucol-blue}
-;format-foreground = ${colors.menucol-blue}
+[module/music]
+type = custom/text
+content = Music
+content-font = 3
+content-padding = 2
+click-left = "gnome-terminal --role=cmus --command=cmus"
 
 
 [module/nm-launcher]
