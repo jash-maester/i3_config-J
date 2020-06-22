@@ -2,9 +2,10 @@
 
 # Install i3-gaps
 
+  - Install Dependencies (use your own package manager):
+
 ## On Fedora
 
-  - Install Dependencies (use your own package manager):
 ```
 sudo dnf install libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake i3status dmenu i3lock xbacklight nitrogen-1.6.1-10.fc32.x86_64
 ```
