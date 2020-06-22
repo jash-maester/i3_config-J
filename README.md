@@ -53,7 +53,7 @@ https://github.com/polybar/polybar#dependencies
 This guide is meant for Fedora GNOME. So modify GDM as follows:
 
  - Open ```/etc/gdm/custom.conf``` Using the editor of your choice
- - Remove the '#' from the line 'WaylandEnable=flase' or add:
+ - Remove the '#' from the line 'WaylandEnable=false' or add:
  ``` WaylandEnable=false```
  
  
