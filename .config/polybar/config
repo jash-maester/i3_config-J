@@ -66,7 +66,7 @@ tray-position = left
 
 modules-left = workspaces xkbstates xkillapp settings terminal appfilemanager firefox music
 modules-center = date media
-modules-right = temperature memory memoryswap cpu battery pulseaudio nm-launcher wifi powermenu
+modules-right = temperature memory cpu battery pulseaudio nm-launcher wifi powermenu
 
 
 ;Date correction
@@ -160,7 +160,7 @@ type = custom/text
 content = Terminal
 content-font = 3 
 content-padding = 2
-click-left = "gnome-terminal"
+click-left = "gnome-terminal &"
 
 
 [module/appfilemanager]
@@ -277,11 +277,11 @@ poll-interval = 5
 
 time-format = %H:%M
 
-format-charging = <animation-charging> <label-charging>
+format-charging = <label-charging>
 format-charging-padding = 2
 format-charging-underline = ${colors.menucol-orange}
 
-format-discharging = <animation-discharging> <label-discharging>
+format-discharging = <label-discharging>
 format-discharging-padding = 2
 format-discharging-underline = ${colors.menucol-orange}
 
@@ -293,23 +293,6 @@ label-discharging-font = 3
 
 label-full= %percentage%% | FULL
 label-full-font = 3
-
-
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-animation-charging-framerate = 750
-animation-charging-foreground = ${colors.menucol-orange}
-
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-3 = 
-animation-discharging-4 = 
-animation-discharging-framerate = 500
-animation-discharging-foreground = ${colors.menucol-orange}
 
 
 [module/cpu]
@@ -331,26 +314,12 @@ type = internal/memory
 interval = 3
 format = <label>
 format-padding = 2
-format-underline = ${colors.menucol-purple}
-
-format-prefix = 
-format-prefix-foreground = ${colors.menucol-purple}
-
-label = "Mem: %gb_used%"
-label-font = 3
-
-
-[module/memoryswap]
-type = internal/memory
-interval = 3
-format = <label>
-format-padding = 2
 format-underline = ${colors.menucol-pink}
 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.menucol-pink}
 
-label = "Swap: %gb_swap_used%"
+label = "Mem: %gb_used% / %gb_swap_used%"
 label-font = 3
 
 
@@ -358,22 +327,14 @@ label-font = 3
 type = internal/temperature
 interval = 0.5
 ;hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input
-format = <ramp> <label>
+format = <label>
 format-padding = 2
 format-underline = ${colors.menucol-deepblue}
 
-format-warn = <ramp> <label-warn>
-label = TEMP: %temperature-c%
+format-warn = <label-warn>
+label = 🌡️TEMP: %temperature-c%
 label-font = 3
 
 label-warn = "%temperature-c% "
 label-warn-font = 3
 label-warn-foreground = #f00
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-3 = 
-ramp-4 = 
-ramp-font = 7
-ramp-foreground = ${colors.menucol-deepblue}

@@ -401,6 +401,10 @@ focus_follows_mouse no
 exec --no-startup-id nitrogen --restore #WallpaperRestore
 exec --no-startup-id libinput-gestures-setup start #Gestures
 exec --no-startup-id nm-applet &  #NetworkApplet
+#exec --no-startup-id "compton -b"
+#exec_always --no-startup-id "/usr/bin/compton --opacity-rule '100:window_type = \"dock\" && class_g = \"i3bar\"' --config ~/.config/compton.conf -b"   #compton compositor
+
+exec_always --no-startup-id "/usr/bin/compton --config ~/.config/compton.conf -b"   #compton compositor
 
 #Screenshoter
 bindsym --release Shift+Print exec --no-startup-id sh $HOME/.config/i3/screenshot.sh partial
