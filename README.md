@@ -19,15 +19,15 @@ If you want to change it to your default terminal edit the configs.
     - light
     - nitrogen
     - rofi
-    - dmenu
-    
+    - dmenu (optional)
+    - cmus (music)
 
 ## On Fedora
 ***I have enabled RPM repos. So some packages maybe exclusive to them. Download them or their alternatives manually.***
 
 
 ```
-sudo dnf install libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake i3status dmenu rofi i3lock light nitrogen-1.6.1-10.fc32.x86_64
+sudo dnf install libxcb-devel xcb-util-keysyms-devel xcb-util-devel xcb-util-wm-devel xcb-util-xrm-devel yajl-devel libXrandr-devel startup-notification-devel libev-devel xcb-util-cursor-devel libXinerama-devel libxkbcommon-devel libxkbcommon-x11-devel pcre-devel pango-devel git gcc automake i3status dmenu rofi i3lock light nitrogen-1.6.1-10.fc32.x86_64 cmus
 ```
 
 ## On Ubuntu:
