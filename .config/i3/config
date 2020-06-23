@@ -22,9 +22,9 @@ set $mod Mod4
 
 
 # color defines for zenburn styled i3
-set $bg     #333333
-set $ac     #111111
-set $tx     #EEEEEE
+set $bg     #4C566A
+set $ac     #9EA6B5
+set $tx     #ECEFF4
 set $ia     #777777
 set $rd     #331111
 
@@ -235,7 +235,7 @@ for_window [class="Nm-connection-editor"] floating enable
 
 # for_window [class="Firefox"] border pixel 2
 # for_window [class="firefox"] border pixel 2
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 5
 
 for_window [class="telegram-desktop"] resize shrink 10 ppt
 
@@ -375,8 +375,12 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%   
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle         #mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5                              # increase screen brightness
-bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5                            # decrease screen brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id light -A 5                              # increase screen brightness
+bindsym XF86MonBrightnessDown exec --no-startup-id light -U 5                            # decrease screen brightness
+
+#Increase/decrease keyboard brightness
+bindsym XF86KbdBrightnessUp exec --no-startup-id sh ~/.config/i3/keyboard_light.sh increase
+bindsym XF86KbdBrightnessDown exec --no-startup-id sh ~/.config/i3/keyboard_light.sh decrease
 
 #Player Controls
 bindcode Mod1+110 exec --no-startup-id playerctl play-pause
