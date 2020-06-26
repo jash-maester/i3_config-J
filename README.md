@@ -55,7 +55,16 @@ Execute the ```install.sh``` script :
 ```
 sh install.sh
 ```
- 
+# Manual Changes
+For weather to work, you will need:
+  - OpenWeatherMap API key.
+```
+Edit ~/.config/polybar/openweathermap-fullfeatured.sh
+
+Go to line:55 and put your API Key in between " "
+Also input your city name: for eg.: Agartala,IN -> as provided by OpenWeatherMap
+
+```
  
 # Logout and log back in to i3 
  - On the login screen you will see a gear icon. Click on it and select i3.
