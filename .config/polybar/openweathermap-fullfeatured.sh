@@ -52,8 +52,8 @@ get_duration() {
 
 }
 
-KEY="460a6f4e7fc408ecbf2c397f88d98301"
-CITY="Agartala,IN"
+KEY=""
+CITY=""
 UNITS="metric"
 SYMBOL="°"
 
