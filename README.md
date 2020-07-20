@@ -2,6 +2,8 @@
 
 [For now this build is fully working for Fedora systems or RHEL systems, because I tested on them. I will prepare a version fully compatible for ubuntu soon enough. Due to exams kind-of busy these days.]
 
+![Screenshot](./Screenshot.png?raw=true "Optional Title")
+
 ```
 ***
 I use both Gnome-Terminal & LukeSmith's-build of St. So all my configs are based on it.
