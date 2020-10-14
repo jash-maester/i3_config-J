@@ -1,0 +1,373 @@
+[fonts]
+opensansreg = DroidSans:Regular:size=8
+opensanssemibold = DroidSans:SemiBold:size=8
+opensansbold = DroidSans:Bold:size=8
+opensansboldhigh = DroidSans:Bold:size=11
+opensansital = DroidSans:Italic:size=9
+xos = xos4\ Terminus:size=14;0
+nerd = TerminessTTF Nerd Font:size=12;1
+symbola = Symbola:Regular:size=8
+fontAwesome = Font\ Awesome\ 5\ Free:Regular:size=12;1
+
+[colors]
+light-red = #D95B5B
+light-green = #249824
+light-purple = #A44BA0
+
+menucol-yellow = #EBCB8B
+menucol-blue = #1771F1
+menucol-orange = #D08770
+menucol-red = #BF616A
+menucol-green = #A3BE8C
+menucol-sealine = #8FBCBB
+menucol-purple = #B48EAD
+menucol-pink = #FF77BF
+menucol-deepblue = #5E81AC
+menucol-lightblue = #88C0D0
+
+fav-purple = #6633FF
+dark = #2E3440
+dark-red = #311
+dark-green = #131
+dark-purple = #201134
+light = #ECEFF4
+gray = #434C5E
+dark-gray = #3B4252
+
+
+[bar/main]
+enable-ipc = true
+override-redirect = false
+
+bottom = false
+width = 100%
+height = 22 ;px
+
+background = ${colors.dark}
+foreground = ${colors.light}
+
+line-color = ${colors.light-purple}
+line-size = 2
+
+separator = "  "
+
+;List of fonts
+font-0 = ${fonts.opensansreg}
+font-1 = ${fonts.opensanssemibold}
+font-2 = ${fonts.opensansbold}
+font-3 = ${fonts.opensansital}
+font-4 = ${fonts.xos}
+font-5 = ${fonts.nerd}
+font-6 = ${fonts.opensansboldhigh}
+font-7 = ${fonts.symbola}
+font-8 = Weather Icons:size=12;1
+font-9 = $(fonts.fontAwesome)
+
+wm-restack = i3
+tray-position = left
+
+modules-left = workspaces xkillapp settings terminal appfilemanager firefox music openweathermap player-cmus 
+modules-center = date media
+modules-right = temperature memory cpu battery pulseaudio nm-launcher wifi powermenu
+
+
+;Date correction
+[module/date]
+type = internal/date
+
+time = %I:%M %p 
+date = %A, %B %d
+date-alt = %A, %B %d, %Y
+time-alt = %I:%M:%S %p 
+;H->24hr; I->12hr ; p-> am/pm
+
+format-prefix = " "
+format-padding = 2
+format-underline = ${colors.menucol-orange}
+format-foreground = ${colors.menucol-orange}
+interval = 20
+
+label = %date% - %time%
+label-font = 2
+label-foreground = ${colors.light}
+
+
+;Workspaces
+[module/workspaces]
+type = internal/i3
+
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+
+format = <label-state> <label-mode>
+
+label-dimmed-underline = ${colors.background}
+
+;On editing mode (resize for ex)
+label-mode = %mode%
+label-mode-background = ${colors.dark-purple}
+label-mode-underline = ${colors.fav-purple}
+label-mode-padding = 2
+label-mode-font = 3
+
+label-focused = %index%
+label-focused-background = ${colors.dark-green}
+label-focused-underline = ${colors.light-green}
+label-focused-padding = 3
+label-focused-font = 3
+
+label-unfocused = %index%
+label-unfocused-foreground = ${colors.gray}
+label-unfocused-padding = 3
+label-unfocused-font = 3
+
+label-visible = %index%
+label-visible-background = ${colors.dark-purple}
+label-visible-underline = ${colors.light-purple}
+label-visible-padding = 3
+label-visible-font = 3
+
+label-urgent = %index%
+label-urgent-background = ${colors.dark-red}
+label-urgent-underline = ${colors.light-red}
+
+
+;[module/updates]
+;type = custom/script
+;format = <label>
+;exec = ~/.config/polybar/updates.sh
+;format-prefix =🞃 
+;interval = 21600
+;format-underline = #FF0300
+
+[module/player-cmus]
+type = custom/script
+format = <label>
+exec = ~/.config/polybar/player_cmus.sh
+label-padding = 2 
+interval = 5
+click-left = cmus-remote -n &
+click-right = cmus-remote -r &
+click-middle = cmus-remote -u &
+
+[module/openweathermap]
+type = custom/script
+format = <label>
+exec = ~/.config/polybar/openweathermap-fullfeatured.sh
+interval = 600
+label-font = 3
+format-foreground = #fff0f5
+label-underline = #f8e076
+label-urgent-padding = 3
+label-urgent-font = 3
+
+click-left = "kill -USR1 %pid%"
+
+[module/music]
+type = custom/text
+content = Music
+content-font = 3
+content-padding = 2
+click-left = "gnome-terminal --role=cmus --command=cmus"
+
+
+[module/nm-launcher]
+type = custom/text
+content = 📶
+content-foreground = ${colors.menucol-green}
+content-underline = ${colors.menucol-green}
+content-padding = 2
+
+click-left = nm-connection-editor
+
+[module/settings]
+type = custom/text
+content = ⚙️
+content-font = 7
+content-padding = 2
+click-left = sh ~/.config/i3/settings.sh
+
+[module/terminal]
+type = custom/text
+content = Terminal
+content-font = 3 
+content-padding = 2
+click-left = "gnome-terminal &"
+
+
+[module/appfilemanager]
+type = custom/text
+content = Files
+content-font = 3 
+content-padding = 2
+click-left = "nautilus > /dev/null 2>&1 &"
+
+[module/firefox]
+type = custom/text
+content = Firefox
+content-font = 3 
+content-padding = 2
+click-left = "firefox &"
+
+
+[module/xkillapp]
+type = custom/text
+content = ❌
+content-font = 10 
+content-padding = 2
+click-left = sleep 0.5 && xkill > /dev/null 2>&1 &
+
+
+;Network
+[module/wifi]
+type = internal/network
+interface = wlp2s0
+format-connected = <label-connected>
+format-connected-padding = 2
+format-connected-foreground = ${colors.menucol-green}
+format-connected-underline = ${colors.menucol-green}
+label-connected = %essid% ⬇️ %downspeed% ⬆️ %upspeed%
+
+format-disconnected = 🚫 
+format-disconnected-font = 7
+format-disconnected-padding = 2
+format-disconnected-foreground = ${colors.menucol-yellow}
+format-disconnected-underline = ${colors.menucol-yellow}
+
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
+
+; Available tags:
+;   <label-volume> (default)
+;   <ramp-volume>
+;   <bar-volume>
+format-volume = <ramp-volume> <label-volume>
+format-volume-padding = 2
+format-volume-underline = ${colors.menucol-sealine}
+
+; Available tags:
+;   <label-muted> (default)
+;   <ramp-volume>
+;   <bar-volume>
+;format-muted = <label-muted>
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels% (unreleased)
+;label-volume = %percentage%%
+
+; Available tokens:
+;   %percentage% (default)
+;   %decibels% (unreleased)
+label-muted = 🔇 muted
+label-muted-foreground = #666
+
+; Only applies if <ramp-volume> is used
+ramp-volume-0 = 🔈
+ramp-volume-1 = 🔉
+ramp-volume-2 = 🔊
+
+; Right and Middle click (unreleased)
+click-right = pavucontrol &
+; click-middle =
+
+
+;Custom Power Button
+[module/powermenu]
+type = custom/text
+
+content = ⏻ 
+content-font = 4
+content-padding = 2
+content-foreground = ${colors.menucol-lightblue}
+content-underline = ${colors.menucol-lightblue}
+
+click-left = sh ~/.config/i3/powermenu.sh
+
+
+;Battery Indicator
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC0
+full-at = 99 
+
+poll-interval = 5
+
+time-format = %H:%M
+
+format-charging = <label-charging>
+format-charging-padding = 2
+format-charging-underline = ${colors.menucol-orange}
+
+format-discharging = <label-discharging>
+format-discharging-padding = 2
+format-discharging-underline = ${colors.menucol-orange}
+
+label-charging = ⚡ %percentage%% | Charging: %time%
+label-charging-font = 3
+
+label-discharging = Rate: %consumption% | %percentage%% | Remaining: %time%
+label-discharging-font = 3
+
+label-full= %percentage%% | FULL
+label-full-font = 3
+
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label>
+format-padding = 2
+format-underline = ${colors.menucol-red}
+
+format-prefix = 
+format-prefix-foreground = ${colors.menucol-red}
+
+label = "CPU: %percentage-sum%"
+label-font = 3
+
+
+[module/memory]
+type = internal/memory
+interval = 3
+format = <label>
+format-padding = 2
+format-underline = ${colors.menucol-pink}
+
+format-prefix = 
+format-prefix-foreground = ${colors.menucol-pink}
+
+label = "Mem: %gb_used% / %gb_swap_used%"
+label-font = 3
+
+
+[module/temperature]
+type = internal/temperature
+interval = 0.5
+;hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input
+format = <label>
+format-padding = 2
+format-underline = ${colors.menucol-deepblue}
+
+format-warn = <label-warn>
+label = 🌡️TEMP: %temperature-c%
+label-font = 3
+
+label-warn = "%temperature-c% "
+label-warn-font = 3
+label-warn-foreground = #f00
